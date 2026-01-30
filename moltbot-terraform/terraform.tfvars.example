@@ -1,0 +1,29 @@
+# MoltBot Terraform Configuration Example
+# Copy this file to terraform.tfvars and update with your values
+# IMPORTANT: Never commit terraform.tfvars with real credentials to git
+
+# AWS Configuration
+aws_region    = "us-east-1"
+instance_type = "t3.medium"  # Minimum recommended, t3.micro will fail
+
+# API Keys (Required - get from respective dashboards)
+anthropic_api_key  = "sk-ant-xxxxx"       # From https://console.anthropic.com
+tailscale_auth_key = "tskey-auth-xxxxx"   # From https://login.tailscale.com/admin/settings/keys
+
+# Tailscale Configuration
+tailnet_dns_name = "tailxxxxx.ts.net"     # From https://login.tailscale.com/admin/dns
+
+# MoltBot Ports (defaults are fine for most setups)
+gateway_port = 18789
+browser_port = 18791
+
+# Environment Configuration
+environment      = "dev"      # Options: dev, staging, prod
+project_name     = "moltbot"
+root_volume_size = 30         # GB - minimum recommended
+
+# Optional: Additional resource tags
+# tags = {
+#   Owner       = "your-name"
+#   CostCenter  = "your-cost-center"
+# }
